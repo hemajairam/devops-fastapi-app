@@ -5,8 +5,10 @@ metadata:
 spec:
   selector:
     app: devops-app
+  type: NodePort
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8000
-  type: LoadBalancer
+      port: 80          # Exposed port inside cluster
+      targetPort: 8000  # Port used by container
+      nodePort: 30080   # Port exposed on localhost (you can change it if needed)
+
