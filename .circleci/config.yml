@@ -1,20 +1,34 @@
 version: 2.1
 
 jobs:
-  build:
+  build-and-push:
     docker:
-      - image: cimg/python:3.11
+      - image: cimg/python:3.11  # base image to run the job
     steps:
       - checkout
+
       - run:
-          name: Install deps
-          command: pip install -r src/requirements.txt
+          name: Set up Docker Buildx
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y docker.io
+            docker version
+
       - run:
-          name: Run Tests
-          command: echo "No tests yet"
+          name: Log in to DockerHub
+          command: echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+
+      - run:
+          name: Build Docker Image
+          command: docker build -t $DOCKERHUB_USERNAME/devops-project:latest .
+
+      - run:
+          name: Push Docker Image to DockerHub
+          command: docker push $DOCKERHUB_USERNAME/devops-project:latest
 
 workflows:
   version: 2
-  build-and-test:
+  build-and-deploy:
     jobs:
-      - build
+      - build-and-push
+
