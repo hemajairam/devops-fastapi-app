@@ -3,28 +3,22 @@ version: 2.1
 jobs:
   build-and-push:
     docker:
-      - image: cimg/python:3.11  # base image to run the job
+      - image: cimg/python:3.11
     steps:
       - checkout
 
-      - run:
-          name: Set up Docker Buildx
-          command: |
-            sudo apt-get update
-            sudo apt-get install -y docker.io
-            docker version
-
-      - run:
-          name: Log in to DockerHub
-          command: echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+      - setup_remote_docker
 
       - run:
           name: Build Docker Image
-          command: docker build -t $DOCKERHUB_USERNAME/devops-project:latest .
+          command: |
+            docker build -t $DOCKERHUB_USERNAME/devops-fastapi-app:latest .
 
       - run:
           name: Push Docker Image to DockerHub
-          command: docker push $DOCKERHUB_USERNAME/devops-project:latest
+          command: |
+            echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+            docker push $DOCKERHUB_USERNAME/devops-fastapi-app:latest
 
 workflows:
   version: 2
