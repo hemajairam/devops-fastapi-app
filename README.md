@@ -18,8 +18,8 @@ This repository contains the solution to my DevOps internship assignment. The pr
 
 ## 🚀 How to Run
 
-### 1. Build Docker Image
-```bash
+ 1. Build Docker Image
+
 
 docker build -t myfastapiapp .
 
@@ -58,6 +58,4 @@ This project is for learning and internship demonstration purposes.
 
 ---
 
-Let me know if you want a shorter version or want to include screenshots, badges, or links to pipelines!
-
->>>>>>> bae0e94 (Add README file)
+Let me know if you want a shorter version or want to include screenshots, badges, or links to pipelin
