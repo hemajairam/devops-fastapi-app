@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # DevOps Internship Project
 CI/CD, Docker, Kubernetes, Monitoring with Datadog.
 =======
@@ -6,21 +6,6 @@ CI/CD, Docker, Kubernetes, Monitoring with Datadog.
 
 This repository contains the solution to my DevOps internship assignment. The project demonstrates setting up CI pipelines using GitHub Actions and CircleCI, Dockerizing a FastAPI application, and monitoring using Datadog.
 
----
-
-## 📁 Project Structure
-
-.
-├── .circleci/ # CircleCI pipeline configuration
-├── .github/workflows/ # GitHub Actions CI pipeline
-├── k8s/ # Kubernetes manifests (deployment, service)
-├── monitor/ # Datadog Agent DaemonSet and secret
-├── src/ # FastAPI source code
-├── Dockerfile # Dockerfile for the FastAPI app
-├── README.md # Project overview
-
-
----
 
 ## ✅ Key Highlights
 
@@ -35,9 +20,11 @@ This repository contains the solution to my DevOps internship assignment. The pr
 
 ### 1. Build Docker Image
 ```bash
+
 docker build -t myfastapiapp .
 
 2. Run Docker Container
+
 
 docker run -d -p 8000:8000 myfastapiapp
 
