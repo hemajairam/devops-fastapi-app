@@ -1,10 +1,10 @@
 
-# DevOps Internship Project
+# DevOps Project
 CI/CD, Docker, Kubernetes, Monitoring with Datadog.
 =======
-# DevOps Internship Assignment 🚀
 
-This repository contains the solution to my DevOps internship assignment. The project demonstrates setting up CI pipelines using GitHub Actions and CircleCI, Dockerizing a FastAPI application, and monitoring using Datadog.
+
+This repository contains the solution to my DevOps project. The project demonstrates setting up CI pipelines using GitHub Actions and CircleCI, Dockerizing a FastAPI application, and monitoring using Datadog.
 
 
 ## ✅ Key Highlights
