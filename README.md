@@ -56,9 +56,8 @@ Aspiring DevOps Engineer 💻☁️
 GitHub: hemajairam
 
 📄 License
-This project is for learning and internship demonstration purposes.
+This project is for learning and demonstration purposes.
 
 
----
 
-Let me know if you want a shorter version or want to include screenshots, badges, or links to pipelin
+
